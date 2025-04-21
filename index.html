@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slaup Go - Compartilhe e Troque de Forma Sustentável</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #1a1a2e;
+        }
+        
+        .navbar {
+            display: flex;
+            align-items: center;
+            padding: 15px 40px;
+            background-color: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            background-color: #222;
+            border-radius: 5px;
+        }
+        
+        .nav-links {
+            display: flex;
+            margin-left: 20px;
+        }
+        
+        .nav-links a {
+            margin-right: 20px;
+            text-decoration: none;
+            color: #1a1a2e;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 80px 20px;
+            background-color: #f9f9f9;
+        }
+        
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #1a1a2e;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+            color: #555;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #16a085;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            margin-top: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #138a72;
+        }
+        
+        .categories {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .categories h2 {
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+        
+        .category-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .category-card {
+            flex: 1;
+            min-width: 220px;
+            max-width: 280px;
+            padding: 30px 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .icon-circle {
+            width: 80px;
+            height: 80px;
+            background-color: #e8f5f3;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+        
+        .icon {
+            color: #16a085;
+            font-size: 2rem;
+        }
+        
+        .category-title {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        .category-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .how-it-works {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+        
+        .how-it-works h2 {
+            margin-bottom: 50px;
+            font-size: 2rem;
+        }
+        
+        .steps-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            margin: 15px;
+            text-align: center;
+        }
+        
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: #16a085;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .step-desc {
+            color: #666;
+            font-size: 0.95rem;
+        }
+        
+        .about {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #fff;
+        }
+        
+        .about h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+        
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            color: #555;
+        }
+        
+        footer {
+            background-color: #1a1a2e;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .category-grid, .steps-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .category-card, .step {
+                width: 100%;
+                max-width: 400px;
+                margin-bottom: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"></div>
+        <div class="nav-links">
+            <a href="#">Início</a>
+            <a href="#">Itens</a>
+            <a href="#">Cadastrar</a>
+        </div>
+    </nav>
+    
+    <section class="header">
+        <h1>Compartilhe e Troque de Forma Sustentável</h1>
+        <p>Uma plataforma para troca gratuita de produtos, serviços e alimentos na sua região</p>
+        <a href="slaup-go-items-page.html" class="btn">Ver Itens Disponíveis</a>
+    </section>
+    
+    <section class="categories">
+        <h2>Categorias</h2>
+        <div class="category-grid">
+            <div class="category-card">
+                <div class="icon-circle">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905A3.61 3.61 0 008.91 7.5h.79l-.405 7A2.013 2.013 0 0011.235 16H13a2 2 0 002-2v-.086l-1-.914z"></path>
+                    </svg>
+                </div>
+                <h3 class="category-title">Alimentos</h3>
+                <p class="category-desc">Compartilhe alimentos frescos e preparados</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="icon-circle">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7h-7m0 0H7m6 0v7m-6-7l6 6m2-5h.01"></path>
+                    </svg>
+                </div>
+                <h3 class="category-title">Produtos</h3>
+                <p class="category-desc">Troque itens que não usa mais</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="icon-circle">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="category-title">Serviços</h3>
+                <p class="category-desc">Ofereça suas habilidades</p>
+            </div>
+            
+            <div class="category-card">
+                <div class="icon-circle">
+                    <svg class="icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" width="32" height="32">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v10a2 2 0 002 2h14a2 2 0 002-2V7a2 2 0 00-2-2H5z"></path>
+                    </svg>
+                </div>
+                <h3 class="category-title">Experiências</h3>
+                <p class="category-desc">Compartilhe momentos especiais</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <h2>Como Funciona</h2>
+        <div class="steps-container">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Encontre um Item</h3>
+                <p class="step-desc">Navegue pelos itens disponíveis na sua região</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Gere um Código</h3>
+                <p class="step-desc">Receba um código único de 6 dígitos</p>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Faça a Troca</h3>
+                <p class="step-desc">Use o código para retirar seu item no local combinado</p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="about">
+        <h2>Sobre o Slaup Go</h2>
+        <p>O Slaup Go é uma plataforma que conecta pessoas interessadas em compartilhar recursos de forma sustentável. Nossa missão é criar uma comunidade baseada na troca, reduzindo o desperdício e promovendo o consumo consciente.</p>
+        <p>Através do nosso sistema único de códigos, garantimos que as trocas sejam seguras e eficientes. Junte-se a nós nessa jornada de transformação social e ambiental.</p>
+    </section>
+    
+    <footer>
+        &copy; 2024 Slaup Go. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
